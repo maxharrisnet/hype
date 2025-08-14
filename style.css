@@ -1,0 +1,396 @@
+/* ===============================
+   Hype Relations – Global Styles
+   =============================== */
+
+/* Theme Variables */
+:root {
+	--font-family: 'Montserrat', sans-serif;
+
+	/* Colors */
+	--color-bg: #ffffff;
+	--color-bg-alt: #fafafa;
+	--color-text: #111111;
+	--color-text-light: #555555;
+	--color-accent: #000000;
+	--color-accent-hover: #333333;
+	--color-border: #dddddd;
+
+	/* Sizing */
+	--radius: 4px;
+	--spacing: 1rem;
+	--spacing-lg: 2rem;
+	--max-width: 1200px;
+}
+
+/* Reset & Base */
+body {
+	margin: 0;
+	font-family: var(--font-family);
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	line-height: 1.6;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--color-accent-hover);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 var(--spacing);
+}
+
+/* ===============================
+   Header
+   =============================== */
+.site-header {
+	background: var(--color-bg);
+	border-bottom: 1px solid var(--color-border);
+	padding: var(--spacing) 0;
+}
+
+.site-header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-header .logo {
+	font-weight: 700;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.site-header nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: var(--spacing);
+}
+
+.site-header nav a {
+	font-weight: 500;
+	font-size: 0.95rem;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+.site-footer {
+	background: var(--color-bg-alt);
+	padding: var(--spacing-lg) var(--spacing);
+	text-align: center;
+	border-top: 1px solid var(--color-border);
+	font-size: 0.9rem;
+	color: var(--color-text-light);
+}
+
+.site-footer a {
+	color: var(--color-accent);
+}
+
+.site-footer a:hover {
+	color: var(--color-accent-hover);
+}
+
+/* ===============================
+   Homepage
+   =============================== */
+.home-hero {
+	text-align: center;
+	padding: var(--spacing-lg) var(--spacing);
+}
+
+.home-hero h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: var(--spacing);
+}
+
+.home-hero p {
+	color: var(--color-text-light);
+	max-width: 640px;
+	margin: 0 auto;
+	font-size: 1rem;
+}
+
+/* Section */
+.section {
+	padding: var(--spacing-lg) 0;
+}
+
+.section h2 {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-bottom: var(--spacing);
+}
+
+/* ===============================
+   About Page
+   =============================== */
+.about-page {
+	padding: var(--spacing-lg) var(--spacing);
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+
+.about-page h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: var(--spacing);
+}
+
+.about-page p {
+	color: var(--color-text-light);
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: var(--spacing);
+}
+
+/* ===============================
+   Booking Form
+   =============================== */
+.booking-form-container {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: var(--spacing-lg);
+	background: var(--color-bg);
+}
+
+.booking-form-container h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	color: var(--color-text);
+	text-align: center;
+}
+
+.booking-form-container p {
+	color: var(--color-text-light);
+	font-size: 1rem;
+	margin-bottom: var(--spacing-lg);
+	text-align: center;
+}
+
+.booking-form-container label {
+	font-weight: 600;
+	font-size: 0.9rem;
+	margin-bottom: 0.3rem;
+	display: block;
+	color: var(--color-text);
+}
+
+.booking-form-container input,
+.booking-form-container select,
+.booking-form-container textarea {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	background: var(--color-bg-alt);
+	font-size: 0.95rem;
+	font-family: var(--font-family);
+	transition: all 0.2s ease-in-out;
+}
+
+.booking-form-container input:focus,
+.booking-form-container select:focus,
+.booking-form-container textarea:focus {
+	border-color: var(--color-accent);
+	background: var(--color-bg);
+	outline: none;
+}
+
+.booking-form-container input[type='submit'] {
+	background: var(--color-accent);
+	color: var(--color-bg);
+	border: none;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0.85rem 2rem;
+	cursor: pointer;
+	border-radius: var(--radius);
+	transition: background 0.2s ease-in-out;
+}
+
+.booking-form-container input[type='submit']:hover {
+	background: var(--color-accent-hover);
+}
+
+/* ===============================
+   Talent Profile
+   =============================== */
+.talent-profile {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: var(--spacing-lg) var(--spacing);
+	font-family: var(--font-family);
+	background: var(--color-bg);
+}
+
+.talent-profile__header {
+	text-align: center;
+	margin-bottom: var(--spacing-lg);
+}
+
+.talent-profile__name {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--color-text);
+	margin-bottom: 0.5rem;
+}
+
+.talent-profile__level {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--color-text-light);
+	text-transform: uppercase;
+}
+
+.talent-profile__image {
+	display: block;
+	max-width: 240px;
+	margin: var(--spacing) auto;
+	border-radius: 50%;
+	border: 2px solid var(--color-border);
+}
+
+.talent-profile__bio {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--color-text-light);
+	margin-bottom: var(--spacing-lg);
+	text-align: center;
+}
+
+.talent-profile__services {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-bottom: var(--spacing-lg);
+}
+
+.talent-profile__service {
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	font-size: 0.9rem;
+	background: var(--color-bg-alt);
+}
+
+.talent-profile__instagram {
+	margin-bottom: var(--spacing-lg);
+}
+
+.talent-profile__gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: var(--spacing);
+}
+
+.talent-profile__gallery img {
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+	object-fit: cover;
+}
+
+.talent-profile__booking {
+	text-align: center;
+	margin-top: var(--spacing-lg);
+}
+
+.talent-profile__booking a {
+	display: inline-block;
+	background: var(--color-accent);
+	color: var(--color-bg);
+	padding: 0.85rem 2rem;
+	font-weight: 600;
+	font-size: 1rem;
+	text-decoration: none;
+	border-radius: var(--radius);
+	transition: background 0.2s ease-in-out;
+}
+
+.talent-profile__booking a:hover {
+	background: var(--color-accent-hover);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 768px) {
+	.site-header .container {
+		flex-direction: column;
+		gap: var(--spacing);
+	}
+	.talent-profile__name {
+		font-size: 1.5rem;
+	}
+}
+
+/* Instagram */
+/* ===============================
+   Instagram Feed
+   =============================== */
+.instagram-feed {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	gap: var(--spacing);
+	margin: var(--spacing-lg) 0;
+}
+
+.instagram-feed__item {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--radius);
+	border: 1px solid var(--color-border);
+	background: var(--color-bg-alt);
+	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.instagram-feed__item:hover {
+	transform: scale(1.02);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.instagram-feed__item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* Optional: overlay effect on hover */
+.instagram-feed__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-bg);
+	font-size: 1rem;
+	font-weight: 500;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.instagram-feed__item:hover .instagram-feed__overlay {
+	opacity: 1;
+}

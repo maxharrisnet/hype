@@ -1,0 +1,61 @@
+[
+  {
+    "key": "group_talent_profile",
+    "title": "Talent Profile Fields",
+    "fields": [
+      {
+        "key": "field_profile_image",
+        "label": "Profile Image",
+        "name": "profile_image",
+        "type": "image",
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_instagram_handle",
+        "label": "Instagram Handle",
+        "name": "instagram_handle",
+        "type": "text",
+        "instructions": "Enter without the @ symbol"
+      },
+      {
+        "key": "field_portfolio_gallery",
+        "label": "Portfolio Gallery",
+        "name": "portfolio_gallery",
+        "type": "gallery",
+        "return_format": "array",
+        "preview_size": "medium",
+        "insert": "append",
+        "library": "all"
+      },
+      {
+        "key": "field_booking_cta",
+        "label": "Booking CTA Label",
+        "name": "booking_cta",
+        "type": "text",
+        "default_value": "Book This Artist"
+      },
+      {
+        "key": "field_portfolio_link",
+        "label": "External Portfolio Link",
+        "name": "portfolio_link",
+        "type": "url"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "talent"
+        }
+      ]
+    ],
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

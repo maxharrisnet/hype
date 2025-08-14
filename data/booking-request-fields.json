@@ -1,0 +1,78 @@
+[
+  {
+    "key": "group_booking_request",
+    "title": "Booking Request Fields",
+    "fields": [
+      {
+        "key": "field_client_name",
+        "label": "Your Name",
+        "name": "client_name",
+        "type": "text",
+        "required": 1
+      },
+      {
+        "key": "field_client_email",
+        "label": "Email Address",
+        "name": "client_email",
+        "type": "email",
+        "required": 1
+      },
+      {
+        "key": "field_client_phone",
+        "label": "Phone Number",
+        "name": "client_phone",
+        "type": "text",
+        "required": 0
+      },
+      {
+        "key": "field_event_date",
+        "label": "Event/Project Date",
+        "name": "event_date",
+        "type": "date_picker",
+        "required": 0
+      },
+      {
+        "key": "field_service_needed",
+        "label": "Service Needed",
+        "name": "service_needed",
+        "type": "taxonomy",
+        "taxonomy": "discipline",
+        "field_type": "select",
+        "add_term": 1,
+        "required": 1
+      },
+      {
+        "key": "field_talent_requested",
+        "label": "Talent Requested",
+        "name": "talent_requested",
+        "type": "post_object",
+        "post_type": [
+          "talent"
+        ],
+        "multiple": 0,
+        "required": 0
+      },
+      {
+        "key": "field_project_details",
+        "label": "Project Details",
+        "name": "project_details",
+        "type": "textarea",
+        "required": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "booking_request"
+        }
+      ]
+    ],
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]
