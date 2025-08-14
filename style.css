@@ -74,7 +74,8 @@ img {
 	letter-spacing: 1px;
 }
 
-.site-header nav ul {
+.site-header nav ul,
+.site-footer nav ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;

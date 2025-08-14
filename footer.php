@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<footer>
+<footer class="site-footer">
   <div class="container">
     <div>
       <p>&copy; <?php echo date('Y'); ?> Hype Relations. All rights reserved.</p>
