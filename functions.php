@@ -37,86 +37,102 @@ function hr_register_menus()
 }
 add_action('init', 'hr_register_menus');
 
-/* Custom Data Structures */
-// Register Talent CPT
+/**
+ * Register Custom Post Type: Talent
+ */
 function hr_register_talent_cpt()
 {
+
   $labels = array(
-    'name' => 'Talent Profiles',
-    'singular_name' => 'Talent',
-    'add_new' => 'Add New',
-    'add_new_item' => 'Add New Talent',
-    'edit_item' => 'Edit Talent',
-    'new_item' => 'New Talent',
-    'view_item' => 'View Talent',
-    'search_items' => 'Search Talent',
-    'not_found' => 'No talent found',
-    'not_found_in_trash' => 'No talent found in trash',
-    'menu_name' => 'Talent'
+    'name'                  => 'Talent',
+    'singular_name'         => 'Talent Profile',
+    'menu_name'             => 'Talent',
+    'name_admin_bar'        => 'Talent Profile',
+    'add_new'               => 'Add New',
+    'add_new_item'          => 'Add New Talent Profile',
+    'new_item'              => 'New Talent Profile',
+    'edit_item'             => 'Edit Talent Profile',
+    'view_item'             => 'View Talent Profile',
+    'all_items'             => 'All Talent',
+    'search_items'          => 'Search Talent',
+    'not_found'             => 'No Talent found.',
+    'not_found_in_trash'    => 'No Talent found in Trash.',
   );
 
   $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'has_archive' => true,
-    'rewrite' => array('slug' => 'talent'),
-    'menu_icon' => 'dashicons-groups',
-    'supports' => array('title', 'editor', 'thumbnail'),
-    'show_in_rest' => false // Not using block editor for CPT
+    'labels'             => $labels,
+    'public'             => true,
+    'has_archive'        => true,
+    'rewrite'            => array('slug' => 'talent'),
+    'supports'           => array('title', 'editor', 'thumbnail'),
+    'show_in_rest'       => false, // Not using block editor for CPT
+    'menu_icon'          => 'dashicons-groups',
   );
 
   register_post_type('talent', $args);
 }
 add_action('init', 'hr_register_talent_cpt');
 
-// Register Disciplines taxonomy
-function hr_register_disciplines_tax()
+/**
+ * Register Growth Stage Taxonomy
+ */
+function hr_register_growth_stage_taxonomy()
 {
+
   $labels = array(
-    'name' => 'Disciplines',
-    'singular_name' => 'Discipline',
-    'search_items' => 'Search Disciplines',
-    'all_items' => 'All Disciplines',
-    'edit_item' => 'Edit Discipline',
-    'update_item' => 'Update Discipline',
-    'add_new_item' => 'Add New Discipline',
-    'new_item_name' => 'New Discipline Name',
-    'menu_name' => 'Disciplines'
+    'name'              => 'Growth Stages',
+    'singular_name'     => 'Growth Stage',
+    'search_items'      => 'Search Growth Stages',
+    'all_items'         => 'All Growth Stages',
+    'edit_item'         => 'Edit Growth Stage',
+    'update_item'       => 'Update Growth Stage',
+    'add_new_item'      => 'Add New Growth Stage',
+    'new_item_name'     => 'New Growth Stage Name',
+    'menu_name'         => 'Growth Stages',
   );
 
-  register_taxonomy('discipline', 'talent', array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
+  $args = array(
+    'hierarchical'      => true, // Category-like
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_in_rest'      => false,
     'show_admin_column' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'discipline'),
-  ));
-}
-add_action('init', 'hr_register_disciplines_tax');
-
-// Register Growth Stage taxonomy
-function hr_register_growth_stage_tax()
-{
-  $labels = array(
-    'name' => 'Growth Stages',
-    'singular_name' => 'Growth Stage',
-    'search_items' => 'Search Growth Stages',
-    'all_items' => 'All Growth Stages',
-    'edit_item' => 'Edit Growth Stage',
-    'update_item' => 'Update Growth Stage',
-    'add_new_item' => 'Add New Growth Stage',
-    'new_item_name' => 'New Growth Stage Name',
-    'menu_name' => 'Growth Stages'
+    'query_var'         => true,
+    'rewrite'           => array('slug' => 'growth_stage'),
   );
 
-  register_taxonomy('growth_stage', 'talent', array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-    'rewrite' => array('slug' => 'growth-stage'),
-  ));
+  register_taxonomy('growth_stage', array('talent'), $args);
 }
-add_action('init', 'hr_register_growth_stage_tax');
+add_action('init', 'hr_register_growth_stage_taxonomy');
+
+/**
+ * Register Specialty Taxonomy
+ */
+function hr_register_specialty_taxonomy()
+{
+
+  $labels = array(
+    'name'              => 'Specialties',
+    'singular_name'     => 'Specialty',
+    'search_items'      => 'Search Specialties',
+    'all_items'         => 'All Specialties',
+    'edit_item'         => 'Edit Specialty',
+    'update_item'       => 'Update Specialty',
+    'add_new_item'      => 'Add New Specialty',
+    'new_item_name'     => 'New Specialty Name',
+    'menu_name'         => 'Specialties',
+  );
+
+  $args = array(
+    'hierarchical'      => true, // Category-like
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_in_rest'      => false,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array('slug' => 'specialty'),
+  );
+
+  register_taxonomy('specialty', array('talent'), $args);
+}
+add_action('init', 'hr_register_specialty_taxonomy');
